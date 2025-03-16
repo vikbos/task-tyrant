@@ -1,0 +1,127 @@
+{
+    "en": {
+        "landing": {
+            "banners": {
+                "landingBanner1Title": "TaskTyrant™ – The Ultimate Micromanagement Tool",
+                "landingBanner1Subtitle": "Because trusting your team is overrated. With TaskTyrant, you can track, nag, and control every single detail of your projects in real-time. Daily stand-ups? Mandatory. Notifications? Non-stop. Autonomy? Absolutely not.",
+                "landingBanner1CTA": "Stop trusting those clock watching fucks NOW !",
+                "landingBanner2Title": "Your employees will HATE you! 🚀",
+                "landingBanner2Subtitle": "We discovered a ridiculously simple way to skyrocket your company's productivity overnight – and they don’t want you to know about it. Click below before they take this down!",
+                "landingBanner2CTA": "Check out the stats !"
+            },
+            "about": {
+                "aboutUs": "About us",
+                "description": "Welcome to TaskTyrant™, the world’s most overbearing, control-obsessed, and unnecessarily rigid project management tool. We believe that true leadership means never letting your team breathe and ensuring that every single keystroke is accounted for. At TaskTyrant, we understand that traditional project management software is too lenient. Other tools promote collaboration, trust, and flexibility—disgusting. That’s why we created a platform designed for the true overlords of productivity: the managers who believe that if you want something done right, you should stand over someone’s shoulder and tell them exactly how to do it, repeatedly.",
+                "features": "Features",
+                "featureName1": "Real-Time Overwatch",
+                "featureDescription1": "Get notified instantly when an employee so much as thinks about slacking off.",
+                "featureName2": "Mandatory Status Updates",
+                "featureDescription2": "Because daily stand-ups are for the weak. We demand hourly reports.",
+                "featureName3": "Punitive Task Reassignment™",
+                "featureDescription3": "Assign tasks, revoke them, then reassign them for no reason at all.",
+                "featureName4": "HoverMode™",
+                "featureDescription4": "A revolutionary feature that lets you observe team members with no escape.",
+                "featureName5": "Redundant Approval Chains",
+                "featureDescription5": "Because nothing says 'efficiency' like five levels of sign-off for a single task.",
+                "featureName6": "Guilt-Based Motivation",
+                "featureDescription6": "Automated passive-aggressive nudges to keep morale at anxiety-inducing levels."
+            },
+            "auth": {
+                "emailLabel": "Email",
+                "emailPlaceholder": "Enter your email",
+                "passwordLabel": "Password",
+                "passwordPlaceholder": "Enter your password",
+                "nameLabel": "Name",
+                "namePlaceholder": "Enter your name",
+                "noAcc": "Don't have an account ?",
+                "signUp": "Sign Up",
+                "login": "LOGIN",
+                "loginError": "Failed to log in. Please check your credentials and try again.",
+                "signUpError": "An error occurred during sign up. Please try again.",
+                "emailInUse": "This email is already in use. Please use a different email."
+            },
+            "topNav": {
+                "about": "About",
+                "stats": "Stats",
+                "language": "Language",
+                "login": "Login"
+            }
+        },
+        "common": {
+            "selectOption": "Select an option"
+        },
+        "validations": {
+            "fieldRequired": "This field is required",
+            "passwordMinLength": "Password length must be at least 8 characters",
+            "passwordMaxLength": "Password must not exceed 30 characters",
+            "allowedSpecials": "Only these special characters are allowed: .!@#&/",
+            "requiredSpecial": "Must contain at least one allowed special character: .!@#&/",
+            "requiredNumber": "Must contain at least one number",
+            "requiredUppercase": "Must contain at least one uppercase letter",
+            "emailPattern": "Enter a valid email address",
+            "namePattern": "Name must contain only letters"
+        }
+    },
+    "es": {
+        "landing": {
+            "banners": {
+                "landingBanner1Title": "TaskTyrant™ – La herramienta definitiva de microgestión",
+                "landingBanner1Subtitle": "Porque confiar en tu equipo está sobrevalorado. Con TaskTyrant, puedes rastrear, regañar y controlar cada detalle de tus proyectos en tiempo real. ¿Reuniones diarias? Obligatorias. ¿Notificaciones? Incesantes. ¿Autonomía? Absolutamente no.",
+                "landingBanner1CTA": "¡Deja de confiar en esos vigilantes del reloj AHORA!",
+                "landingBanner2Title": "¡Tus empleados te ODIARÁN! 🚀",
+                "landingBanner2Subtitle": "Hemos descubierto una forma ridículamente sencilla de disparar la productividad de tu empresa de la noche a la mañana – y ellos no quieren que lo sepas. ¡Haz clic abajo antes de que lo retiren!",
+                "landingBanner2CTA": "¡Consulta las estadísticas!"
+            },
+            "about": {
+                "aboutUs": "Acerca de nosotros",
+                "description": "Bienvenido a TaskTyrant™, la herramienta de gestión de proyectos más opresiva, obsesionada con el control y excesivamente rígida del mundo. Creemos que el verdadero liderazgo significa nunca dejar respirar a tu equipo y asegurarte de que cada pulsación de tecla sea registrada. En TaskTyrant, entendemos que el software de gestión de proyectos tradicional es demasiado indulgente. Otras herramientas promueven la colaboración, la confianza y la flexibilidad—¡repugnante! Por eso creamos una plataforma diseñada para los verdaderos señores de la productividad: los gerentes que creen que, si quieres que algo se haga bien, debes estar encima de ellos diciéndoles exactamente cómo hacerlo, repetidamente.",
+                "features": "Características",
+                "featureName1": "Vigilancia en tiempo real",
+                "featureDescription1": "Recibe notificaciones instantáneas cuando un empleado siquiera piensa en holgazanear.",
+                "featureName2": "Actualizaciones de estado obligatorias",
+                "featureDescription2": "Porque las reuniones diarias son para los débiles. Exigimos informes cada hora.",
+                "featureName3": "Reasignación punitiva de tareas™",
+                "featureDescription3": "Asigna tareas, revócalas y reasígnalas sin razón aparente.",
+                "featureName4": "Modo de Acecho™",
+                "featureDescription4": "Una función revolucionaria que te permite observar a los miembros del equipo sin escapatoria.",
+                "featureName5": "Cadenas de aprobación redundantes",
+                "featureDescription5": "Porque nada dice 'eficiencia' como cinco niveles de aprobación para una sola tarea.",
+                "featureName6": "Motivación basada en la culpa",
+                "featureDescription6": "Recordatorios pasivo-agresivos automatizados para mantener la moral en niveles de ansiedad."
+            },
+            "auth": {
+                "emailLabel": "Correo electrónico",
+                "emailPlaceholder": "Introduce tu correo",
+                "passwordLabel": "Contraseña",
+                "passwordPlaceholder": "Introduce tu contraseña",
+                "nameLabel": "Nombre",
+                "namePlaceholder": "Introduce tu nombre",
+                "noAcc": "¿No tienes cuenta?",
+                "signUp": "Regístrate",
+                "login": "INICIAR SESIÓN",
+                "loginError": "Error al iniciar sesión. Por favor, revisa tus credenciales e inténtalo de nuevo.",
+                "signUpError": "Ocurrió un error durante el registro. Por favor, inténtalo de nuevo.",
+                "emailInUse": "Este correo electrónico ya está en uso. Por favor, utiliza uno diferente."
+            },
+            "topNav": {
+                "about": "Acerca de",
+                "stats": "Estadísticas",
+                "language": "Idioma",
+                "login": "Iniciar sesión"
+            }
+        },
+        "common": {
+            "selectOption": "Seleccione una opción"
+        },
+        "validations": {
+            "fieldRequired": "Este campo es obligatorio",
+            "passwordMinLength": "La contraseña debe tener al menos 8 caracteres",
+            "passwordMaxLength": "La contraseña no debe exceder los 30 caracteres",
+            "requiredSpecial": "Debe contener al menos un carácter especial permitido: .!@#&/",
+            "requiredNumber": "Debe contener al menos un número",
+            "requiredUppercase": "Debe contener al menos una letra mayúscula",
+            "emailPattern": "Introduce una dirección de correo válida",
+            "namePattern": "El nombre debe contener solo letras"
+        }
+    }
+}
