@@ -9,6 +9,7 @@ import { PrivateRoute } from "./components/navigation/PrivateRoute";
 import { lightTheme } from "./theme";
 
 const App: React.FC = () => {
+  console.log("test");
   return (
     <Routes>
       <Route
