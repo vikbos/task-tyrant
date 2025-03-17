@@ -2,14 +2,8 @@ import React from "react";
 import styled, { css } from "styled-components";
 
 export interface BannerProps extends React.HTMLAttributes<HTMLDivElement> {
-  /** Path or URL to the banner image */
   imagePath: string;
-  /** Optional JSX content to render on top of the banner image */
   overlayContent?: React.ReactNode;
-  /**
-   * Position of the overlay content.
-   * Defaults to "center".
-   */
   overlayPosition?:
     | "top-left"
     | "top-center"
@@ -22,7 +16,6 @@ export interface BannerProps extends React.HTMLAttributes<HTMLDivElement> {
     | "bottom-right";
 }
 
-// The main container spans the entire viewport and displays the background image.
 const BannerContainer = styled.div<{ imagePath: string }>`
   width: 100vw;
   height: 100vh;
@@ -32,7 +25,6 @@ const BannerContainer = styled.div<{ imagePath: string }>`
   position: relative;
 `;
 
-// Overlay container which positions the optional JSX based on the overlayPosition prop.
 const Overlay = styled.div<{
   $overlayPosition: BannerProps["overlayPosition"];
 }>`

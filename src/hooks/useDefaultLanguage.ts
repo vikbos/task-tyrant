@@ -1,5 +1,6 @@
 import { useMemo } from "react";
 import { DropdownOption } from "../ui/StyledSelect";
+import { EN } from "../locales/types";
 
 export function useDefaultLanguage(options: DropdownOption[]): string {
   return useMemo(() => {
@@ -11,7 +12,7 @@ export function useDefaultLanguage(options: DropdownOption[]): string {
     } else if (options.some(option => option.value === systemLanguage)) {
       return systemLanguage;
     } else {
-      return "en";
+      return EN;
     }
   }, [options]);
 }

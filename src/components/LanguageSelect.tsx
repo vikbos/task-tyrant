@@ -3,10 +3,11 @@ import { useForm } from "react-hook-form";
 import { DropdownOption, FormSelect } from "../ui/StyledSelect";
 import i18n from "../locales/i18n";
 import { useDefaultLanguage } from "../hooks/useDefaultLanguage";
+import { EN, ES } from "../locales/types";
 
 const languageOptions: DropdownOption[] = [
-  { label: "en", value: "en" },
-  { label: "es", value: "es" },
+  { label: EN, value: EN },
+  { label: ES, value: ES },
 ];
 
 interface LanguageForm {

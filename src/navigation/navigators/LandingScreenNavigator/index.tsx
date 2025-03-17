@@ -1,5 +1,4 @@
 import React from "react";
-
 import { Routes, Route } from "react-router-dom";
 import { ABOUT, AUTH } from "../types";
 import { InfoScreen } from "../../screens/Landing/InfoScreen";

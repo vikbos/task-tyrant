@@ -1,22 +1,16 @@
 import React from "react";
 import styled, { css } from "styled-components";
+import { layout, LayoutProps, space, SpaceProps } from "styled-system";
 
-interface TextProps extends React.HTMLAttributes<HTMLSpanElement> {
-  /**
-   * Defines the text style variant.
-   * Default is "body".
-   */
+interface TextProps
+  extends React.HTMLAttributes<HTMLSpanElement>,
+    SpaceProps,
+    LayoutProps {
   variant?: "body" | "title" | "subtitle" | "caption" | "link";
-
-  /** Custom text color */
   color?: string;
-  /** Custom font size */
   fontSize?: string;
-  /** Custom font weight */
   fontWeight?: string;
-  /** Custom line height */
   lineHeight?: string;
-  /** Custom text alignment */
   textAlign?: string;
 }
 
@@ -55,6 +49,9 @@ export const Text = styled.span<TextProps>`
   line-height: ${({ lineHeight }) => lineHeight || "normal"};
   text-align: ${({ textAlign }) => textAlign || "inherit"};
   ${({ variant }) => variant && variantStyles[variant]};
+
+  ${space}
+  ${layout}
 `;
 
 export const StyledText: React.FC<TextProps> = ({ children, ...props }) => {

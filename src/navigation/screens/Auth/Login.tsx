@@ -1,10 +1,10 @@
-import React, { useState, FormEvent } from "react";
+import React, { useState } from "react";
 import { auth } from "../../../firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { FlexBox } from "../../../ui/Flexbox";
 import { useForm } from "react-hook-form";
-import { FormInput, StyledInput } from "../../../ui/StyledInput";
+import { FormInput } from "../../../ui/StyledInput";
 import { authErrors, LoginFieldNames, LoginFields } from "./types";
 import { StyledButton } from "../../../ui/StyledButton";
 import { emailRules } from "../../../components/form/validations";
@@ -59,7 +59,7 @@ export const Login: React.FC = () => {
           {t("landing.auth.login")}
         </StyledButton>
         {authError && (
-          <StyledText color="red" style={{ marginTop: "1rem" }}>
+          <StyledText color="red" mt={3}>
             {authError}
           </StyledText>
         )}

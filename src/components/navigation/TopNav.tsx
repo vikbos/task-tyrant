@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { FlexBox } from "../../ui/Flexbox";
 import { Link, useNavigate } from "react-router-dom";
 import {
@@ -11,12 +11,6 @@ import { useAuth } from "../../contexts/AuthContext";
 import { signOut } from "firebase/auth";
 import { auth } from "../../firebase";
 import { useTranslation } from "react-i18next";
-import {
-  DropdownOption,
-  FormSelect,
-  StyledSelect,
-} from "../../ui/StyledSelect";
-import { useForm } from "react-hook-form";
 import { LanguageSelect } from "../LanguageSelect";
 
 const linkStyle = {
@@ -26,8 +20,6 @@ const linkStyle = {
   fontSize: "1.5rem",
   fontWeight: 600,
 };
-
-const TOP_NAV_MIN_HEIGHT = "5vh";
 
 const AuthNav: React.FC = () => {
   const { currentUser } = useAuth();
@@ -43,11 +35,7 @@ const AuthNav: React.FC = () => {
   };
 
   return (
-    <FlexBox
-      alignItems="center"
-      justifyContent="space-between"
-      minHeight={TOP_NAV_MIN_HEIGHT}
-    >
+    <FlexBox alignItems="center" justifyContent="space-between" minHeight={4}>
       <FlexBox>
         <StyledText variant="subtitle" style={linkStyle}>
           Hello, {currentUser?.displayName}
@@ -71,11 +59,7 @@ const LandingNav: React.FC = () => {
   const { t } = useTranslation();
 
   return (
-    <FlexBox
-      alignItems="center"
-      justifyContent="space-between"
-      minHeight={TOP_NAV_MIN_HEIGHT}
-    >
+    <FlexBox alignItems="center" justifyContent="space-between" minHeight={4}>
       <FlexBox>
         <Link to={`${ABOUT}`} style={linkStyle}>
           {t("landing.topNav.about")}

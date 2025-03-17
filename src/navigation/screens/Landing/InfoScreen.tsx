@@ -1,37 +1,10 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import { FlexBox } from "../../../ui/Flexbox";
-import { Banner, BannerProps } from "../../../ui/Banner";
-import StatisticsWoman from "../../../assets/images/StatisticsWoman.png";
-import Businessman from "../../../assets/images/Businessman.png";
-import { BannerCard, BannerCardProps } from "./components/BannerCard";
-import { ABOUT, STATISTICS } from "../../navigators/types";
+import { Banner } from "../../../ui/Banner";
+import { BannerCard } from "./components/BannerCard";
 import { useTranslation } from "react-i18next";
-
-type BannerNBannerCardProps = Pick<
-  BannerCardProps,
-  "title" | "subtitle" | "buttonText"
-> &
-  Pick<BannerProps, "imagePath" | "overlayPosition"> & { navPath: string };
-
-const banners: BannerNBannerCardProps[] = [
-  {
-    imagePath: Businessman,
-    overlayPosition: "center-right",
-    title: "landing.banners.landingBanner1Title",
-    subtitle: "landing.banners.landingBanner1Subtitle",
-    buttonText: "landing.banners.landingBanner1CTA",
-    navPath: `/${ABOUT}`,
-  },
-  {
-    imagePath: StatisticsWoman,
-    overlayPosition: "center-left",
-    title: "landing.banners.landingBanner2Title",
-    subtitle: "landing.banners.landingBanner2Subtitle",
-    buttonText: "landing.banners.landingBanner2CTA",
-    navPath: `/${STATISTICS}`,
-  },
-];
+import { banners } from "./mockData";
 
 export const InfoScreen: React.FC = () => {
   const navigate = useNavigate();
@@ -40,6 +13,7 @@ export const InfoScreen: React.FC = () => {
   return (
     <FlexBox flexDirection="column" overflow="hidden">
       {banners.map((banner) => {
+        const bannerNavigate = () => navigate(banner.navPath);
         return (
           <Banner
             key={banner.title}
@@ -50,7 +24,7 @@ export const InfoScreen: React.FC = () => {
                 title={t(banner.title)}
                 subtitle={t(banner.subtitle)}
                 buttonText={t(banner.buttonText)}
-                onCTAClick={() => navigate(banner.navPath)}
+                onCTAClick={bannerNavigate}
               />
             }
           />
