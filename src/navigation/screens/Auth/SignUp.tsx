@@ -1,10 +1,10 @@
-import React, { useState, FormEvent } from "react";
+import React, { useState } from "react";
 import { auth, db } from "../../../firebase";
 import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import { doc, setDoc } from "firebase/firestore";
 import { FlexBox } from "../../../ui/Flexbox";
-import { FormInput, StyledInput } from "../../../ui/StyledInput";
+import { FormInput } from "../../../ui/StyledInput";
 import { authErrors, SignUpFieldNames, SignUpFields } from "./types";
 import { useForm } from "react-hook-form";
 import {
