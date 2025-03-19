@@ -1,12 +1,12 @@
-import React from "react";
-import styled, { css } from "styled-components";
-import { layout, LayoutProps, space, SpaceProps } from "styled-system";
+import React from 'react';
+import styled, { css } from 'styled-components';
+import { layout, LayoutProps, space, SpaceProps } from 'styled-system';
 
 interface TextProps
   extends React.HTMLAttributes<HTMLSpanElement>,
     SpaceProps,
     LayoutProps {
-  variant?: "body" | "title" | "subtitle" | "caption" | "link";
+  variant?: 'body' | 'title' | 'subtitle' | 'caption' | 'link';
   color?: string;
   fontSize?: string;
   fontWeight?: string;
@@ -41,13 +41,13 @@ const variantStyles = {
 };
 
 export const Text = styled.span<TextProps>`
-  color: ${({ color }) => color || "inherit"};
+  color: ${({ color }) => color || 'inherit'};
   font-size: ${({ fontSize, variant }) =>
-    fontSize || (variant && variantStyles[variant] ? undefined : "1rem")};
+    fontSize || (variant && variantStyles[variant] ? undefined : '1rem')};
   font-weight: ${({ fontWeight, variant }) =>
-    fontWeight || (variant && variantStyles[variant] ? undefined : "normal")};
-  line-height: ${({ lineHeight }) => lineHeight || "normal"};
-  text-align: ${({ textAlign }) => textAlign || "inherit"};
+    fontWeight || (variant && variantStyles[variant] ? undefined : 'normal')};
+  line-height: ${({ lineHeight }) => lineHeight || 'normal'};
+  text-align: ${({ textAlign }) => textAlign || 'inherit'};
   ${({ variant }) => variant && variantStyles[variant]};
 
   ${space}

@@ -1,23 +1,23 @@
-import React from "react";
-import { FlexBox } from "../../ui/Flexbox";
-import { Link, useNavigate } from "react-router-dom";
+import React from 'react';
+import { FlexBox } from '../../ui/Flexbox';
+import { Link, useNavigate } from 'react-router-dom';
 import {
   ABOUT,
   LOGIN_PATH,
   STATISTICS,
-} from "../../navigation/navigators/types";
-import { StyledText } from "../../ui/Text";
-import { useAuth } from "../../contexts/AuthContext";
-import { signOut } from "firebase/auth";
-import { auth } from "../../firebase";
-import { useTranslation } from "react-i18next";
-import { LanguageSelect } from "../LanguageSelect";
+} from '../../navigation/navigators/types';
+import { StyledText } from '../../ui/Text';
+import { useAuth } from '../../contexts/AuthContext';
+import { signOut } from 'firebase/auth';
+import { auth } from '../../firebase';
+import { useTranslation } from 'react-i18next';
+import { LanguageSelect } from '../LanguageSelect';
 
 const linkStyle = {
-  padding: "1rem",
-  color: "black",
-  textDecoration: "none",
-  fontSize: "1.5rem",
+  padding: '1rem',
+  color: 'black',
+  textDecoration: 'none',
+  fontSize: '1.5rem',
   fontWeight: 600,
 };
 
@@ -30,7 +30,7 @@ const AuthNav: React.FC = () => {
       await signOut(auth);
       navigate(LOGIN_PATH);
     } catch (err: any) {
-      console.error("Error logging out:", err);
+      console.error('Error logging out:', err);
     }
   };
 
@@ -62,13 +62,13 @@ const LandingNav: React.FC = () => {
     <FlexBox alignItems="center" justifyContent="space-between" minHeight={4}>
       <FlexBox>
         <Link to={`${ABOUT}`} style={linkStyle}>
-          {t("landing.topNav.about")}
+          {t('landing.topNav.about')}
         </Link>
         <Link to={`${STATISTICS}`} style={linkStyle}>
-          {t("landing.topNav.stats")}
+          {t('landing.topNav.stats')}
         </Link>
         <StyledText variant="subtitle" style={linkStyle}>
-          {t("landing.topNav.language")}
+          {t('landing.topNav.language')}
         </StyledText>
         <LanguageSelect />
       </FlexBox>
@@ -79,7 +79,7 @@ const LandingNav: React.FC = () => {
       </FlexBox>
       <FlexBox>
         <Link to={LOGIN_PATH} style={linkStyle}>
-          {t("landing.topNav.login")}
+          {t('landing.topNav.login')}
         </Link>
       </FlexBox>
     </FlexBox>

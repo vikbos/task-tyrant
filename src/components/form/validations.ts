@@ -1,13 +1,13 @@
-import { RegisterOptions } from "react-hook-form";
-import { TranslateFN } from "../../locales/types";
-import { EMAIL_REGEXP, NAME_REGEXP } from "./regexes";
+import { RegisterOptions } from 'react-hook-form';
+import { TranslateFN } from '../../locales/types';
+import { EMAIL_REGEXP, NAME_REGEXP } from './regexes';
 
 export const signupPasswordRules = (t: TranslateFN): RegisterOptions => {
   return {
     required: t('validations.fieldRequired'),
     minLength: {
-        value: 8,
-        message: t('validations.passwordMinLength')
+      value: 8,
+      message: t('validations.passwordMinLength'),
     },
     maxLength: {
       value: 30,
@@ -38,9 +38,9 @@ export const signupPasswordRules = (t: TranslateFN): RegisterOptions => {
         }
         return true;
       },
-    }
-  }
-}
+    },
+  };
+};
 
 export const emailRules = (t: TranslateFN): RegisterOptions => {
   return {
@@ -49,8 +49,8 @@ export const emailRules = (t: TranslateFN): RegisterOptions => {
       value: EMAIL_REGEXP,
       message: t('validations.emailPattern'),
     },
-  }
-}
+  };
+};
 
 export const nameRules = (t: TranslateFN): RegisterOptions => {
   return {
@@ -59,5 +59,5 @@ export const nameRules = (t: TranslateFN): RegisterOptions => {
       value: NAME_REGEXP,
       message: t('validations.namePattern'),
     },
-  }
-}
+  };
+};

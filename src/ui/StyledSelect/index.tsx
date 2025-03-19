@@ -1,21 +1,21 @@
-import React from "react";
+import React from 'react';
 import {
   Listbox,
   ListboxButton,
   ListboxOption,
   ListboxOptions,
-} from "@headlessui/react";
-import { SpaceProps, LayoutProps } from "styled-system";
+} from '@headlessui/react';
+import { SpaceProps, LayoutProps } from 'styled-system';
 import {
   Control,
   Controller,
   FieldValues,
   Path,
   RegisterOptions,
-} from "react-hook-form";
-import { styled } from "styled-components";
-import { FlexBox } from "../Flexbox";
-import { useTranslation } from "react-i18next";
+} from 'react-hook-form';
+import { styled } from 'styled-components';
+import { FlexBox } from '../Flexbox';
+import { useTranslation } from 'react-i18next';
 
 export interface DropdownOption {
   value: string;
@@ -50,7 +50,7 @@ export const StyledSelect: React.FC<SelectProps> = ({
   placeholder,
 }) => {
   const { t } = useTranslation();
-  const innerPlaceholder = placeholder ? placeholder : t("common.selectOption");
+  const innerPlaceholder = placeholder ? placeholder : t('common.selectOption');
   const selectedOption = options.find((option) => option.value === value);
   const buttonText = selectedOption ? selectedOption.label : innerPlaceholder;
 
@@ -74,12 +74,12 @@ export const StyledSelect: React.FC<SelectProps> = ({
 };
 
 export interface FormSelectProps<TFormValues extends FieldValues>
-  extends Omit<SelectProps, "value" | "onChange"> {
+  extends Omit<SelectProps, 'value' | 'onChange'> {
   name: Path<TFormValues>;
   control: Control<TFormValues>;
   rules?: Omit<
     RegisterOptions<TFormValues, Path<TFormValues>>,
-    "setValueAs" | "disabled" | "valueAsNumber" | "valueAsDate" | "deps"
+    'setValueAs' | 'disabled' | 'valueAsNumber' | 'valueAsDate' | 'deps'
   >;
   defaultValue?: string;
 }
@@ -88,7 +88,7 @@ export function FormSelect<TFormValues extends FieldValues>({
   control,
   name,
   rules,
-  defaultValue = "",
+  defaultValue = '',
   ...rest
 }: FormSelectProps<TFormValues>) {
   return (
