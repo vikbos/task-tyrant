@@ -1,5 +1,10 @@
-module.exports = {
-    parser: '@typescript-eslint/parser',
+import typescriptParser from '@typescript-eslint/parser'
+
+export default [
+  {
+    languageOptions: {
+        parser: typescriptParser
+    },
     parserOptions: {
       ecmaVersion: 2020,
       sourceType: 'module',
@@ -27,5 +32,5 @@ module.exports = {
     rules: {
       'prettier/prettier': 'error',
     },
-  };
-  
+  }
+] 
