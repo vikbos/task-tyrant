@@ -1,16 +1,16 @@
-import React, { forwardRef, InputHTMLAttributes } from "react";
-import styled, { css } from "styled-components";
-import { FlexBox } from "../Flexbox";
-import { StyledText } from "../Text";
+import React, { forwardRef, InputHTMLAttributes } from 'react';
+import styled, { css } from 'styled-components';
+import { FlexBox } from '../Flexbox';
+import { StyledText } from '../Text';
 import {
   Controller,
   Control,
   Path,
   FieldValues,
   RegisterOptions,
-} from "react-hook-form";
+} from 'react-hook-form';
 
-type InputVariant = "primary" | "secondary";
+type InputVariant = 'primary' | 'secondary';
 
 export interface StyledInputProps
   extends InputHTMLAttributes<HTMLInputElement> {
@@ -40,32 +40,34 @@ const StyledInputElement = styled.input<
   StyledInputProps & { hasError?: boolean }
 >`
   font-size: 1rem;
-  padding: ${({ padding }) => padding || "0.5rem 0.75rem"};
-  border-radius: ${({ borderRadius }) => borderRadius || "4px"};
+  padding: ${({ padding }) => padding || '0.5rem 0.75rem'};
+  border-radius: ${({ borderRadius }) => borderRadius || '4px'};
   width: 100%;
 
-  ${({ variant }) => variant && variantStyles[variant || "primary"]};
+  ${({ variant }) => variant && variantStyles[variant || 'primary']};
 
   border-color: ${({ borderColor, variant, hasError }) =>
     hasError
-      ? "#dc3545"
-      : borderColor || (variant === "secondary" ? "#6c757d" : "#007bff")};
-  border-width: ${({ borderWidth }) => borderWidth || "1px"};
+      ? '#dc3545'
+      : borderColor || (variant === 'secondary' ? '#6c757d' : '#007bff')};
+  border-width: ${({ borderWidth }) => borderWidth || '1px'};
 
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
 
   &:focus {
     outline: none;
     box-shadow: 0 0 0 0.2rem
       ${({ hasError }) =>
-        hasError ? "rgba(220, 53, 69, 0.25)" : "rgba(0, 123, 255, 0.25)"};
+        hasError ? 'rgba(220, 53, 69, 0.25)' : 'rgba(0, 123, 255, 0.25)'};
   }
 `;
 
 export const StyledInput = forwardRef<HTMLInputElement, StyledInputProps>(
   (
     {
-      variant = "primary",
+      variant = 'primary',
       borderColor,
       borderWidth,
       borderRadius,
@@ -104,13 +106,13 @@ export const StyledInput = forwardRef<HTMLInputElement, StyledInputProps>(
 export interface FormInputProps<TFormValues extends FieldValues>
   extends Omit<
     StyledInputProps,
-    "value" | "onChange" | "onBlur" | "ref" | "errorMessage"
+    'value' | 'onChange' | 'onBlur' | 'ref' | 'errorMessage'
   > {
   name: Path<TFormValues>;
   control: Control<TFormValues>;
   rules?: Omit<
     RegisterOptions<TFormValues, Path<TFormValues>>,
-    "disabled" | "valueAsNumber" | "valueAsDate" | "setValueAs" | "deps"
+    'disabled' | 'valueAsNumber' | 'valueAsDate' | 'setValueAs' | 'deps'
   >;
   defaultValue?: string;
 }
@@ -119,7 +121,7 @@ export function FormInput<TFormValues extends FieldValues>({
   control,
   name,
   rules,
-  defaultValue = "",
+  defaultValue = '',
   label,
   ...rest
 }: FormInputProps<TFormValues>) {

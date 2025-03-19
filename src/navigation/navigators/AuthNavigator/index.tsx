@@ -1,9 +1,9 @@
-import React from "react";
+import React from 'react';
 
-import { Routes, Route } from "react-router-dom";
-import { SignUp } from "../../screens/Auth/SignUp";
-import { Login } from "../../screens/Auth/Login";
-import { LOGIN, SIGNUP } from "../types";
+import { Routes, Route } from 'react-router-dom';
+import { SignUp } from '../../screens/Auth/SignUp';
+import { Login } from '../../screens/Auth/Login';
+import { LOGIN, SIGNUP } from '../types';
 
 export const AuthNavigator = () => {
   return (

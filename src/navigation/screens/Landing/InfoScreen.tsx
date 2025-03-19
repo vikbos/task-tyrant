@@ -1,10 +1,10 @@
-import React from "react";
-import { useNavigate } from "react-router-dom";
-import { FlexBox } from "../../../ui/Flexbox";
-import { Banner } from "../../../ui/Banner";
-import { BannerCard } from "./components/BannerCard";
-import { useTranslation } from "react-i18next";
-import { banners } from "./mockData";
+import React from 'react';
+import { useNavigate } from 'react-router-dom';
+import { FlexBox } from '../../../ui/Flexbox';
+import { Banner } from '../../../ui/Banner';
+import { BannerCard } from './components/BannerCard';
+import { useTranslation } from 'react-i18next';
+import { banners } from './mockData';
 
 export const InfoScreen: React.FC = () => {
   const navigate = useNavigate();

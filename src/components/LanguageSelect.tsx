@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
-import { useForm } from "react-hook-form";
-import { DropdownOption, FormSelect } from "../ui/StyledSelect";
-import i18n from "../locales/i18n";
-import { useDefaultLanguage } from "../hooks/useDefaultLanguage";
-import { EN, ES } from "../locales/types";
+import React, { useEffect } from 'react';
+import { useForm } from 'react-hook-form';
+import { DropdownOption, FormSelect } from '../ui/StyledSelect';
+import i18n from '../locales/i18n';
+import { useDefaultLanguage } from '../hooks/useDefaultLanguage';
+import { EN, ES } from '../locales/types';
 
 const languageOptions: DropdownOption[] = [
   { label: EN, value: EN },
@@ -21,10 +21,10 @@ export const LanguageSelect: React.FC = () => {
     defaultValues: { language: defaultLanguage },
   });
 
-  const selectedLanguage = watch("language");
+  const selectedLanguage = watch('language');
 
   useEffect(() => {
-    localStorage.setItem("language", selectedLanguage);
+    localStorage.setItem('language', selectedLanguage);
     i18n.changeLanguage(selectedLanguage);
   }, [selectedLanguage]);
 

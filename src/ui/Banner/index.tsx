@@ -1,19 +1,19 @@
-import React from "react";
-import styled, { css } from "styled-components";
+import React from 'react';
+import styled, { css } from 'styled-components';
 
 export interface BannerProps extends React.HTMLAttributes<HTMLDivElement> {
   imagePath: string;
   overlayContent?: React.ReactNode;
   overlayPosition?:
-    | "top-left"
-    | "top-center"
-    | "top-right"
-    | "center-left"
-    | "center"
-    | "center-right"
-    | "bottom-left"
-    | "bottom-center"
-    | "bottom-right";
+    | 'top-left'
+    | 'top-center'
+    | 'top-right'
+    | 'center-left'
+    | 'center'
+    | 'center-right'
+    | 'bottom-left'
+    | 'bottom-center'
+    | 'bottom-right';
 }
 
 const BannerContainer = styled.div<{ imagePath: string }>`
@@ -26,57 +26,57 @@ const BannerContainer = styled.div<{ imagePath: string }>`
 `;
 
 const Overlay = styled.div<{
-  $overlayPosition: BannerProps["overlayPosition"];
+  $overlayPosition: BannerProps['overlayPosition'];
 }>`
   position: absolute;
   ${({ $overlayPosition }) => {
     switch ($overlayPosition) {
-      case "top-left":
+      case 'top-left':
         return css`
           top: 0;
           left: 0;
         `;
-      case "top-center":
+      case 'top-center':
         return css`
           top: 0;
           left: 50%;
           transform: translateX(-50%);
         `;
-      case "top-right":
+      case 'top-right':
         return css`
           top: 0;
           right: 0;
         `;
-      case "center-left":
+      case 'center-left':
         return css`
           top: 50%;
           left: 0;
           transform: translateY(-50%);
         `;
-      case "center":
+      case 'center':
         return css`
           top: 50%;
           left: 50%;
           transform: translate(-50%, -50%);
         `;
-      case "center-right":
+      case 'center-right':
         return css`
           top: 50%;
           right: 0;
           transform: translateY(-50%);
         `;
-      case "bottom-left":
+      case 'bottom-left':
         return css`
           bottom: 0;
           left: 0;
         `;
-      case "bottom-center":
+      case 'bottom-center':
         return css`
           bottom: 0;
           left: 50%;
           transform: translateX(-50%);
         `;
-      case "bottom-right":
+      case 'bottom-right':
         return css`
           bottom: 0;
           right: 0;
@@ -94,7 +94,7 @@ const Overlay = styled.div<{
 export const Banner: React.FC<BannerProps> = ({
   imagePath,
   overlayContent,
-  overlayPosition = "center",
+  overlayPosition = 'center',
   ...rest
 }) => {
   return (

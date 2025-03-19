@@ -1,9 +1,9 @@
-import React from "react";
-import styled, { css } from "styled-components";
+import React from 'react';
+import styled, { css } from 'styled-components';
 
 export interface StyledButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "primary" | "secondary" | "tertiary";
+  variant?: 'primary' | 'secondary' | 'tertiary';
 
   color?: string;
   backgroundColor?: string;
@@ -33,18 +33,20 @@ const variantStyles = {
 
 const StyledButtonWrapper = styled.button<StyledButtonProps>`
   cursor: pointer;
-  padding: ${({ padding }) => padding || "0.5rem 1rem"};
-  border-radius: ${({ borderRadius }) => borderRadius || "4px"};
-  font-size: ${({ fontSize }) => fontSize || "1rem"};
-  font-weight: ${({ fontWeight }) => fontWeight || "normal"};
-  transition: background-color 0.3s ease, color 0.3s ease;
+  padding: ${({ padding }) => padding || '0.5rem 1rem'};
+  border-radius: ${({ borderRadius }) => borderRadius || '4px'};
+  font-size: ${({ fontSize }) => fontSize || '1rem'};
+  font-weight: ${({ fontWeight }) => fontWeight || 'normal'};
+  transition:
+    background-color 0.3s ease,
+    color 0.3s ease;
 
   ${({ variant, backgroundColor, color }) =>
     variant
       ? variantStyles[variant]
       : css`
-          background-color: ${backgroundColor || "gray"};
-          color: ${color || "white"};
+          background-color: ${backgroundColor || 'gray'};
+          color: ${color || 'white'};
           border: none;
         `}
 
