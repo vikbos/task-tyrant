@@ -1,9 +1,9 @@
-import typescriptParser from '@typescript-eslint/parser'
+const typescriptParser = require('@typescript-eslint/parser');
 
-export default [
+module.exports = [
   {
     languageOptions: {
-        parser: typescriptParser
+      parser: typescriptParser,
     },
     parserOptions: {
       ecmaVersion: 2020,
@@ -32,5 +32,5 @@ export default [
     rules: {
       'prettier/prettier': 'error',
     },
-  }
-] 
+  },
+];
