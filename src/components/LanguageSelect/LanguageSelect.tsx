@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
-import { DropdownOption, FormSelect } from '../ui/StyledSelect';
-import i18n from '../locales/i18n';
-import { useDefaultLanguage } from '../hooks/useDefaultLanguage';
-import { EN, ES } from '../locales/types';
+import { DropdownOption, FormSelect } from '../../ui/StyledSelect';
+import i18n from '../../locales/i18n';
+import { useDefaultLanguage } from '../../hooks/useDefaultLanguage';
+import { EN, ES } from '../../locales/types';
 
 const languageOptions: DropdownOption[] = [
   { label: EN, value: EN },

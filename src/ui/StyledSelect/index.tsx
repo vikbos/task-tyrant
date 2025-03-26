@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 import {
   Listbox,
   ListboxButton,
@@ -43,35 +43,34 @@ const StyledOption = styled.p`
   cursor: pointer;
 `;
 
-export const StyledSelect: React.FC<SelectProps> = ({
-  options,
-  value,
-  onChange,
-  placeholder,
-}) => {
-  const { t } = useTranslation();
-  const innerPlaceholder = placeholder ? placeholder : t('common.selectOption');
-  const selectedOption = options.find((option) => option.value === value);
-  const buttonText = selectedOption ? selectedOption.label : innerPlaceholder;
+export const StyledSelect = forwardRef<HTMLButtonElement, SelectProps>(
+  (
+    { options, value, onChange, placeholder = 'Select an option' }: SelectProps,
+    ref
+  ) => {
+    const { t } = useTranslation();
+    const innerPlaceholder = placeholder || t('common.selectOption');
+    const selectedOption = options.find((option) => option.value === value);
+    const buttonText = selectedOption ? selectedOption.label : innerPlaceholder;
 
-  return (
-    <Listbox value={value} onChange={onChange}>
-      {/* TODO: do a nicer button with chevron indicator */}
-      <ListboxButton>{buttonText}</ListboxButton>
-      <ListboxOptions anchor="bottom" transition as={StyledOptions}>
-        {options.map((option) => (
-          <ListboxOption
-            key={option.value}
-            value={option.value}
-            as={StyledOption}
-          >
-            {option.label}
-          </ListboxOption>
-        ))}
-      </ListboxOptions>
-    </Listbox>
-  );
-};
+    return (
+      <Listbox value={value} onChange={onChange}>
+        <ListboxButton ref={ref}>{buttonText}</ListboxButton>
+        <ListboxOptions anchor="bottom" transition as={StyledOptions}>
+          {options.map((option) => (
+            <ListboxOption
+              key={option.value}
+              value={option.value}
+              as={StyledOption}
+            >
+              {option.label}
+            </ListboxOption>
+          ))}
+        </ListboxOptions>
+      </Listbox>
+    );
+  }
+);
 
 export interface FormSelectProps<TFormValues extends FieldValues>
   extends Omit<SelectProps, 'value' | 'onChange'> {
