@@ -11,7 +11,7 @@ import { useAuth } from '../../contexts/AuthContext';
 import { signOut } from 'firebase/auth';
 import { auth } from '../../firebase';
 import { useTranslation } from 'react-i18next';
-import { LanguageSelect } from '../LanguageSelect';
+import { LanguageSelect } from '../LanguageSelect/LanguageSelect';
 
 const linkStyle = {
   padding: '1rem',
