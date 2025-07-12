@@ -1,12 +1,12 @@
 import React from 'react';
-import { FlexBox } from '../../ui/Flexbox';
+import { FlexBox } from '../../ui/FlexBox/FlexBox';
 import { Link, useNavigate } from 'react-router-dom';
 import {
   ABOUT,
   LOGIN_PATH,
   STATISTICS,
 } from '../../navigation/navigators/types';
-import { StyledText } from '../../ui/Text';
+import { StyledText } from '../../ui/Styledtext/StyledText';
 import { useAuth } from '../../contexts/AuthContext';
 import { signOut } from 'firebase/auth';
 import { auth } from '../../firebase';

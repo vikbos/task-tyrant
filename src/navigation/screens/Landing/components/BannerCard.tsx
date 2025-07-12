@@ -1,7 +1,7 @@
 import React from 'react';
-import { FlexBox } from '../../../../ui/Flexbox';
-import { StyledText } from '../../../../ui/Text';
-import { StyledButton } from '../../../../ui/StyledButton';
+import { FlexBox } from '../../../../ui/FlexBox/FlexBox';
+import { StyledText } from '../../../../ui/Styledtext/StyledText';
+import { StyledButton } from '../../../../ui/StyledButton/StyledButton';
 
 export type BannerCardProps = {
   title: string;

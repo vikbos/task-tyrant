@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import { StyledInput } from '../StyledInput';
+import { StyledInput } from './StyledInput';
 import { ThemeProvider } from 'styled-components';
 import { lightTheme } from '../../theme';
 

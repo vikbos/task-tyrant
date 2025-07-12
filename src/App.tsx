@@ -3,8 +3,8 @@ import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import { DASHBOARD } from './navigation/navigators/types';
-import { LandingScreenNavigator } from './navigation/navigators/LandingScreenNavigator';
-import { DashboardNavigator } from './navigation/navigators/DashboardNavigator';
+import { LandingScreenNavigator } from './navigation/navigators/LandingScreenNavigator/LandingScreenNavigator';
+import { DashboardNavigator } from './navigation/navigators/DashboardNavigator/DashboardNavigator';
 import { PrivateRoute } from './components/navigation/PrivateRoute';
 import { lightTheme } from './theme';
 

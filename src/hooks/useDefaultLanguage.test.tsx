@@ -1,6 +1,6 @@
 import { renderHook } from '@testing-library/react';
 import { useDefaultLanguage } from './useDefaultLanguage';
-import { DropdownOption } from '../ui/StyledSelect';
+import { DropdownOption } from '../ui/StyledSelect/StyledSelect';
 
 describe('useDefaultLanguage', () => {
   const languageOptions: DropdownOption[] = [

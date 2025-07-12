@@ -1,6 +1,6 @@
 import React from 'react';
-import { FlexBox } from '../../../ui/Flexbox';
-import { StyledText } from '../../../ui/Text';
+import { FlexBox } from '../../../ui/FlexBox/FlexBox';
+import { StyledText } from '../../../ui/Styledtext/StyledText';
 import { useTranslation } from 'react-i18next';
 import { featureList } from './mockData';
 

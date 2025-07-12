@@ -14,7 +14,7 @@ import {
   RegisterOptions,
 } from 'react-hook-form';
 import { styled } from 'styled-components';
-import { FlexBox } from '../Flexbox';
+import { FlexBox } from '../FlexBox/FlexBox';
 import { useTranslation } from 'react-i18next';
 
 export interface DropdownOption {

@@ -3,7 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import { ABOUT, AUTH } from '../types';
 import { InfoScreen } from '../../screens/Landing/InfoScreen';
 import { AboutScreen } from '../../screens/Landing/AboutScreen';
-import { AuthNavigator } from '../AuthNavigator';
+import { AuthNavigator } from '../AuthNavigator/AuthNavigator';
 import { TopNav } from '../../../components/navigation/TopNav';
 
 export const LandingScreenNavigator: React.FC = () => {

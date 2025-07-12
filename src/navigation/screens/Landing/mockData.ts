@@ -1,5 +1,5 @@
 import { TranslateKey } from '../../../locales/types';
-import { BannerProps } from '../../../ui/Banner';
+import { BannerProps } from '../../../ui/Banner/FullScreenBanner';
 import { ABOUT, STATISTICS } from '../../navigators/types';
 import { BannerCardProps } from './components/BannerCard';
 import StatisticsWoman from '../../../assets/images/StatisticsWoman.png';
