@@ -1,5 +1,5 @@
 import { useMemo } from 'react';
-import { DropdownOption } from '../ui/StyledSelect';
+import { DropdownOption } from '../ui/StyledSelect/StyledSelect';
 import { EN } from '../locales/types';
 
 export function useDefaultLanguage(options: DropdownOption[]): string {

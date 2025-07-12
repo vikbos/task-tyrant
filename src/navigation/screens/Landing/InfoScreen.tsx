@@ -1,7 +1,7 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
-import { FlexBox } from '../../../ui/Flexbox';
-import { Banner } from '../../../ui/Banner';
+import { FlexBox } from '../../../ui/FlexBox/FlexBox';
+import { Banner } from '../../../ui/Banner/FullScreenBanner';
 import { BannerCard } from './components/BannerCard';
 import { useTranslation } from 'react-i18next';
 import { banners } from './mockData';

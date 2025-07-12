@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import { auth } from '../../../firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
-import { FlexBox } from '../../../ui/Flexbox';
+import { FlexBox } from '../../../ui/FlexBox/FlexBox';
 import { useForm } from 'react-hook-form';
-import { FormInput } from '../../../ui/StyledInput';
+import { FormInput } from '../../../ui/StyledInput/StyledInput';
 import { authErrors, LoginFieldNames, LoginFields } from './types';
-import { StyledButton } from '../../../ui/StyledButton';
+import { StyledButton } from '../../../ui/StyledButton/StyledButton';
 import { emailRules } from '../../../components/form/validations';
-import { StyledText } from '../../../ui/Text';
+import { StyledText } from '../../../ui/Styledtext/StyledText';
 import { AUTH, DASHBOARD, SIGNUP } from '../../navigators/types';
 import { useTranslation } from 'react-i18next';
 

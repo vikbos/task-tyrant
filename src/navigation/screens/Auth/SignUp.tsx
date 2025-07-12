@@ -3,8 +3,8 @@ import { auth, db } from '../../../firebase';
 import { createUserWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
 import { doc, setDoc } from 'firebase/firestore';
-import { FlexBox } from '../../../ui/Flexbox';
-import { FormInput } from '../../../ui/StyledInput';
+import { FlexBox } from '../../../ui/FlexBox/FlexBox';
+import { FormInput } from '../../../ui/StyledInput/StyledInput';
 import { authErrors, SignUpFieldNames, SignUpFields } from './types';
 import { useForm } from 'react-hook-form';
 import {
@@ -12,8 +12,8 @@ import {
   nameRules,
   signupPasswordRules,
 } from '../../../components/form/validations';
-import { StyledButton } from '../../../ui/StyledButton';
-import { StyledText } from '../../../ui/Text';
+import { StyledButton } from '../../../ui/StyledButton/StyledButton';
+import { StyledText } from '../../../ui/Styledtext/StyledText';
 import { DASHBOARD } from '../../navigators/types';
 import { useTranslation } from 'react-i18next';
 

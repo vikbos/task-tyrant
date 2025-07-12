@@ -1,7 +1,7 @@
 import React, { forwardRef, InputHTMLAttributes } from 'react';
 import styled, { css } from 'styled-components';
-import { FlexBox } from '../Flexbox';
-import { StyledText } from '../Text';
+import { FlexBox } from '../FlexBox/FlexBox';
+import { StyledText } from '../Styledtext/StyledText';
 import {
   Controller,
   Control,
