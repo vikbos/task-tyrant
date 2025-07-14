@@ -1,8 +1,11 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
+import { layout, LayoutProps, space, SpaceProps } from 'styled-system';
 
 export interface StyledButtonProps
-  extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  extends React.ButtonHTMLAttributes<HTMLButtonElement>,
+    SpaceProps,
+    LayoutProps {
   variant?: 'primary' | 'secondary' | 'tertiary';
 
   color?: string;
@@ -15,45 +18,36 @@ export interface StyledButtonProps
 
 const variantStyles = {
   primary: css`
-    background-color: #007bff;
-    color: #ffffff;
+    background-color: ${({ theme }) => theme.colors.primary};
+    color: ${({ theme }) => theme.colors.textOnPrimary};
     border: none;
   `,
   secondary: css`
-    background-color: #6c757d;
-    color: #ffffff;
+    background-color: ${({ theme }) => theme.colors.backgroundSecondary};
+    color: ${({ theme }) => theme.colors.textOnPrimary};
     border: none;
   `,
   tertiary: css`
     background-color: transparent;
-    color: #007bff;
-    border: 1px solid #007bff;
+    color: ${({ theme }) => theme.colors.primary};
+    border: 1px solid ${({ theme }) => theme.colors.primary};
   `,
 };
 
 const StyledButtonWrapper = styled.button<StyledButtonProps>`
   cursor: pointer;
-  padding: ${({ padding }) => padding || '0.5rem 1rem'};
-  border-radius: ${({ borderRadius }) => borderRadius || '4px'};
-  font-size: ${({ fontSize }) => fontSize || '1rem'};
-  font-weight: ${({ fontWeight }) => fontWeight || 'normal'};
+  padding: ${({ padding, theme }) => padding || theme.space[2]};
+  border-radius: ${({ borderRadius, theme }) => borderRadius || theme.radii.md};
+  font-size: ${({ fontSize, theme }) => fontSize || theme.fontSizes.md};
+  font-weight: ${({ fontWeight, theme }) =>
+    fontWeight || theme.fontWeights.normal};
   transition:
     background-color 0.3s ease,
     color 0.3s ease;
 
-  ${({ variant, backgroundColor, color }) =>
-    variant
-      ? variantStyles[variant]
-      : css`
-          background-color: ${backgroundColor || 'gray'};
-          color: ${color || 'white'};
-          border: none;
-        `}
-
   &:hover {
     opacity: 0.85;
   }
-
   ${({ disabled }) =>
     disabled &&
     css`
@@ -61,6 +55,10 @@ const StyledButtonWrapper = styled.button<StyledButtonProps>`
       cursor: not-allowed;
       pointer-events: none;
     `}
+  ${({ variant }) => variant && variantStyles[variant]}
+
+  ${space}
+  ${layout}
 `;
 
 export const StyledButton: React.FC<StyledButtonProps> = ({

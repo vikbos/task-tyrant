@@ -13,9 +13,9 @@ import {
   signupPasswordRules,
 } from '../../../components/form/validations';
 import { StyledButton } from '../../../ui/StyledButton/StyledButton';
-import { StyledText } from '../../../ui/Styledtext/StyledText';
 import { DASHBOARD } from '../../navigators/types';
 import { useTranslation } from 'react-i18next';
+import { StyledText } from '../../../ui/Styledtext/StyledText';
 
 export const SignUp: React.FC = () => {
   const {
@@ -86,10 +86,10 @@ export const SignUp: React.FC = () => {
           disabled={!isValid}
           onClick={handleSubmit(onSubmitSignup)}
         >
-          SIGNUP
+          {t('landing.auth.signUp')}
         </StyledButton>
         {authError && (
-          <StyledText color="red" style={{ marginTop: '1rem' }}>
+          <StyledText variant="errorMessage" mt={3}>
             {authError}
           </StyledText>
         )}

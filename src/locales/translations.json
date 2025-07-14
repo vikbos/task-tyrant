@@ -39,13 +39,14 @@
                 "loginError": "Failed to log in. Please check your credentials and try again.",
                 "signUpError": "An error occurred during sign up. Please try again.",
                 "emailInUse": "This email is already in use. Please use a different email."
-            },
-            "topNav": {
-                "about": "About",
-                "stats": "Stats",
-                "language": "Language",
-                "login": "Login"
             }
+        },
+        "topNav": {
+            "about": "About",
+            "stats": "Stats",
+            "language": "Language",
+            "login": "Login",
+            "logout": "LOGOUT"
         },
         "common": {
             "selectOption": "Select an option"
@@ -102,13 +103,14 @@
                 "loginError": "Error al iniciar sesión. Por favor, revisa tus credenciales e inténtalo de nuevo.",
                 "signUpError": "Ocurrió un error durante el registro. Por favor, inténtalo de nuevo.",
                 "emailInUse": "Este correo electrónico ya está en uso. Por favor, utiliza uno diferente."
-            },
-            "topNav": {
-                "about": "Acerca de",
-                "stats": "Estadísticas",
-                "language": "Idioma",
-                "login": "Iniciar sesión"
             }
+        },
+        "topNav": {
+            "about": "Acerca de",
+            "stats": "Estadísticas",
+            "language": "Idioma",
+            "login": "Iniciar sesión",
+            "logout": "LOGOUT"
         },
         "common": {
             "selectOption": "Seleccione una opción"

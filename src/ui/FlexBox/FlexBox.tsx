@@ -1,6 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
-import { space, layout, SpaceProps, LayoutProps } from 'styled-system';
+import { space, layout, SpaceProps, LayoutProps, Theme } from 'styled-system';
+
+type BackgroundKey =
+  | 'background'
+  | 'backgroundSecondary'
+  | 'backgroundElevated';
+
+type RadiiKey = 'none' | 'sm' | 'md' | 'lg' | 'pill';
 
 interface FlexBoxProps
   extends React.HTMLAttributes<HTMLDivElement>,
@@ -12,6 +19,8 @@ interface FlexBoxProps
   flexWrap?: React.CSSProperties['flexWrap'];
   gap?: React.CSSProperties['gap'];
   alignContent?: React.CSSProperties['alignContent'];
+  backgroundColor?: BackgroundKey;
+  borderRadius?: RadiiKey;
 }
 
 const StyledFlexBox = styled.div<FlexBoxProps>`
@@ -22,6 +31,18 @@ const StyledFlexBox = styled.div<FlexBoxProps>`
   flex-wrap: ${({ flexWrap }) => flexWrap || 'nowrap'};
   gap: ${({ gap }) => gap || '0'};
   align-content: ${({ alignContent }) => alignContent || 'initial'};
+  background-color: ${({ backgroundColor, theme }) => {
+    if (backgroundColor) {
+      return theme.colors[backgroundColor];
+    }
+    return theme.colors.background;
+  }};
+  border-radius: ${({ theme, borderRadius }) => {
+    if (borderRadius) {
+      return theme.radii[borderRadius];
+    }
+    return theme.radii.none;
+  }};
 
   ${space}
   ${layout}

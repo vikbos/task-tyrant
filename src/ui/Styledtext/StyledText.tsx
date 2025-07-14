@@ -2,50 +2,71 @@ import React from 'react';
 import styled, { css } from 'styled-components';
 import { layout, LayoutProps, space, SpaceProps } from 'styled-system';
 
-interface TextProps
+type FontSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl' | 'xxl';
+type Variant =
+  | 'body'
+  | 'title'
+  | 'subtitle'
+  | 'label'
+  | 'link'
+  | 'errorMessage';
+type FontWeight = 'slim' | 'normal' | 'thick';
+
+export interface TextProps
   extends React.HTMLAttributes<HTMLSpanElement>,
     SpaceProps,
     LayoutProps {
-  variant?: 'body' | 'title' | 'subtitle' | 'caption' | 'link';
+  variant?: Variant;
   color?: string;
-  fontSize?: string;
-  fontWeight?: string;
+  fontSize?: FontSize;
+  fontWeight?: FontWeight;
   lineHeight?: string;
-  textAlign?: string;
+  textAlign?: React.CSSProperties['textAlign'];
 }
 
 const variantStyles = {
   title: css`
-    font-size: 2rem;
-    font-weight: bold;
+    font-size: ${({ theme }) => theme.fontSizes.xxl};
+    font-weight: ${({ theme }) => theme.fontWeights.thick};
   `,
   subtitle: css`
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-size: ${({ theme }) => theme.fontSizes.xl};
+    font-weight: ${({ theme }) => theme.fontWeights.thick};
   `,
-  caption: css`
-    font-size: 0.75rem;
-    font-weight: normal;
+  label: css`
+    font-size: ${({ theme }) => theme.fontSizes.sm};
+    font-weight: ${({ theme }) => theme.fontWeights.normal};
   `,
   body: css`
-    font-size: 1rem;
-    font-weight: normal;
+    font-size: ${({ theme }) => theme.fontSizes.md};
+    font-weight: ${({ theme }) => theme.fontWeights.normal};
   `,
   link: css`
-    font-size: 1rem;
-    font-weight: normal;
-    color: blue;
+    font-size: ${({ theme }) => theme.fontSizes.sm};
+    font-weight: ${({ theme }) => theme.fontWeights.normal};
+    color: ${({ theme }) => theme.colors.textLink};
     text-decoration: underline;
     cursor: pointer;
+  `,
+  errorMessage: css`
+    font-size: ${({ theme }) => theme.fontSizes.sm};
+    font-weight: ${({ theme }) => theme.fontWeights.normal};
+    color: ${({ theme }) => theme.colors.error};
   `,
 };
 
 export const Text = styled.span<TextProps>`
-  color: ${({ color }) => color || 'inherit'};
-  font-size: ${({ fontSize, variant }) =>
-    fontSize || (variant && variantStyles[variant] ? undefined : '1rem')};
-  font-weight: ${({ fontWeight, variant }) =>
-    fontWeight || (variant && variantStyles[variant] ? undefined : 'normal')};
+  color: ${({ color, theme }) => color || theme.colors.textPrimary};
+  font-size: ${({ fontSize, theme, variant }) => {
+    if (fontSize) return theme.fontSizes[fontSize];
+    if (variant && variantStyles[variant]) return undefined;
+    return theme.fontSizes.md;
+  }};
+  font-weight: ${({ fontWeight, theme, variant }) => {
+    if (fontWeight) return theme.fontWeights[fontWeight];
+    if (variant && variantStyles[variant]) return undefined;
+    return theme.fontSizes.md;
+  }};
   line-height: ${({ lineHeight }) => lineHeight || 'normal'};
   text-align: ${({ textAlign }) => textAlign || 'inherit'};
   ${({ variant }) => variant && variantStyles[variant]};
