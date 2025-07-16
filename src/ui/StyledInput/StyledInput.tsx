@@ -1,5 +1,5 @@
 import React, { forwardRef, InputHTMLAttributes } from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { FlexBox } from '../FlexBox/FlexBox';
 import { StyledText } from '../Styledtext/StyledText';
 import {
