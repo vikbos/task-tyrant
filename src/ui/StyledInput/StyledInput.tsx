@@ -28,34 +28,16 @@ export interface StyledInputProps
   padding?: string;
 }
 
-const variantStyles = {
-  primary: css`
-    border: 1px solid ${({ theme }) => theme.colors.border};
-    background-color: ${({ theme }) => theme.colors.background};
-    color: ${({ theme }) => theme.colors.textPrimary};
-  `,
-  secondary: css`
-    border: 1px solid ${({ theme }) => theme.colors.borderDark};
-    background-color: ${({ theme }) => theme.colors.backgroundSecondary};
-    color: ${({ theme }) => theme.colors.textPrimary};
-  `,
-};
-
 const StyledInputElement = styled.input<
   StyledInputProps & { hasError?: boolean }
 >`
   font-size: ${({ theme }) => theme.fontSizes.md};
   border-radius: ${({ borderRadius, theme }) => borderRadius || theme.radii.md};
-  padding: ${({ theme }) => theme.space[2]};
-  width: 100%;
-  border-color: ${({ borderColor, variant, hasError, theme }) =>
-    hasError
-      ? theme.colors.error
-      : borderColor ||
-        (variant === 'secondary'
-          ? theme.colors.borderDark
-          : theme.colors.border)};
+  padding: ${({ theme, padding }) => padding || theme.space[2]};
+  border-color: ${({ borderColor, hasError, theme }) =>
+    hasError ? theme.colors.error : borderColor || theme.colors.border};
   border-width: ${({ borderWidth }) => borderWidth || '1px'};
+  border-style: solid;
   transition:
     border-color 0.2s ease,
     box-shadow 0.2s ease;
@@ -65,7 +47,6 @@ const StyledInputElement = styled.input<
     ${({ hasError, theme }) =>
       hasError ? theme.colors.error : theme.colors.primary};
   }
-  ${({ variant }) => variant && variantStyles[variant]};
 
   ${space}
   ${layout}
