@@ -1,5 +1,5 @@
 import React, { forwardRef, InputHTMLAttributes } from 'react';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 import { FlexBox } from '../FlexBox/FlexBox';
 import { StyledText } from '../Styledtext/StyledText';
 import {
@@ -9,59 +9,47 @@ import {
   FieldValues,
   RegisterOptions,
 } from 'react-hook-form';
+import { layout, LayoutProps, space, SpaceProps } from 'styled-system';
 
 type InputVariant = 'primary' | 'secondary';
 
+type ConflictingProps = 'height' | 'width' | 'size'; // Add more if needed
+
 export interface StyledInputProps
-  extends InputHTMLAttributes<HTMLInputElement> {
+  extends Omit<InputHTMLAttributes<HTMLInputElement>, ConflictingProps>,
+    SpaceProps,
+    LayoutProps {
   variant?: InputVariant;
   borderColor?: string;
   borderWidth?: string;
   borderRadius?: string;
-  padding?: string;
   label?: string;
   errorMessage?: string;
+  padding?: string;
 }
-
-const variantStyles = {
-  primary: css`
-    border: 1px solid #007bff;
-    background-color: #fff;
-    color: #333;
-  `,
-  secondary: css`
-    border: 1px solid #6c757d;
-    background-color: #f8f9fa;
-    color: #333;
-  `,
-};
 
 const StyledInputElement = styled.input<
   StyledInputProps & { hasError?: boolean }
 >`
-  font-size: 1rem;
-  padding: ${({ padding }) => padding || '0.5rem 0.75rem'};
-  border-radius: ${({ borderRadius }) => borderRadius || '4px'};
-  width: 100%;
-
-  ${({ variant }) => variant && variantStyles[variant || 'primary']};
-
-  border-color: ${({ borderColor, variant, hasError }) =>
-    hasError
-      ? '#dc3545'
-      : borderColor || (variant === 'secondary' ? '#6c757d' : '#007bff')};
+  font-size: ${({ theme }) => theme.fontSizes.md};
+  border-radius: ${({ borderRadius, theme }) => borderRadius || theme.radii.md};
+  padding: ${({ theme, padding }) => padding || theme.space[2]};
+  border-color: ${({ borderColor, hasError, theme }) =>
+    hasError ? theme.colors.error : borderColor || theme.colors.border};
   border-width: ${({ borderWidth }) => borderWidth || '1px'};
-
+  border-style: solid;
   transition:
     border-color 0.2s ease,
     box-shadow 0.2s ease;
-
   &:focus {
     outline: none;
-    box-shadow: 0 0 0 0.2rem
-      ${({ hasError }) =>
-        hasError ? 'rgba(220, 53, 69, 0.25)' : 'rgba(0, 123, 255, 0.25)'};
+    box-shadow: ${({ theme }) => theme.shadows.sm};
+    ${({ hasError, theme }) =>
+      hasError ? theme.colors.error : theme.colors.primary};
   }
+
+  ${space}
+  ${layout}
 `;
 
 export const StyledInput = forwardRef<HTMLInputElement, StyledInputProps>(
@@ -94,9 +82,7 @@ export const StyledInput = forwardRef<HTMLInputElement, StyledInputProps>(
           {...rest}
         />
         {errorMessage && (
-          <StyledText variant="body" color="red">
-            {errorMessage}
-          </StyledText>
+          <StyledText variant="errorMessage">{errorMessage}</StyledText>
         )}
       </FlexBox>
     );

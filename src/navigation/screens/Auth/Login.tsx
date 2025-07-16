@@ -59,7 +59,7 @@ export const Login: React.FC = () => {
           {t('landing.auth.login')}
         </StyledButton>
         {authError && (
-          <StyledText color="red" mt={3}>
+          <StyledText variant="errorMessage" mt={3}>
             {authError}
           </StyledText>
         )}

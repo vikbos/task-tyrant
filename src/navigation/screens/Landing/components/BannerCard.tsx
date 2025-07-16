@@ -10,16 +10,6 @@ export type BannerCardProps = {
   onCTAClick: () => void;
 };
 
-const containerStyle = {
-  maxWidth: '500px',
-  backgroundColor: 'white',
-  margin: '40px',
-  borderRadius: 20,
-  padding: '30px 20px',
-};
-
-const textStyle = { marginBottom: '20px' };
-
 export const BannerCard: React.FC<BannerCardProps> = ({
   title,
   subtitle,
@@ -32,12 +22,15 @@ export const BannerCard: React.FC<BannerCardProps> = ({
       justifyContent="center"
       alignContent="center"
       alignItems="center"
-      style={containerStyle}
+      maxWidth="500px"
+      borderRadius="lg"
+      margin="40px"
+      padding="30px 20px"
     >
-      <StyledText textAlign="center" variant="title" style={textStyle}>
+      <StyledText textAlign="center" variant="title" mb={4}>
         {title}
       </StyledText>
-      <StyledText textAlign="center" variant="subtitle" style={textStyle}>
+      <StyledText textAlign="center" variant="subtitle" mb={4}>
         {subtitle}
       </StyledText>
       <StyledButton variant="primary" onClick={onCTAClick}>

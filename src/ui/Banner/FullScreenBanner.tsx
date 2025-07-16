@@ -1,19 +1,21 @@
 import React from 'react';
 import styled, { css } from 'styled-components';
 
+type BannerOverlayPosition =
+  | 'top-left'
+  | 'top-center'
+  | 'top-right'
+  | 'center-left'
+  | 'center'
+  | 'center-right'
+  | 'bottom-left'
+  | 'bottom-center'
+  | 'bottom-right';
+
 export interface BannerProps extends React.HTMLAttributes<HTMLDivElement> {
   imagePath: string;
   overlayContent?: React.ReactNode;
-  overlayPosition?:
-    | 'top-left'
-    | 'top-center'
-    | 'top-right'
-    | 'center-left'
-    | 'center'
-    | 'center-right'
-    | 'bottom-left'
-    | 'bottom-center'
-    | 'bottom-right';
+  overlayPosition?: BannerOverlayPosition;
 }
 
 const BannerContainer = styled.div<{ imagePath: string }>`

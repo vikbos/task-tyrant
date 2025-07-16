@@ -32,24 +32,29 @@ export interface SelectProps extends SpaceProps, LayoutProps {
 const StyledOptions = styled(FlexBox)`
   flex-direction: column;
   min-width: 100px;
-  margin: 4px;
+  margin: ${({ theme }) => theme.space[1]};
   border: 1px solid ${({ theme }) => theme.colors.primary};
-  border-radius: 4px;
+  border-radius: ${({ theme }) => theme.radii.md};
   background-color: ${({ theme }) => theme.colors.background};
 `;
 
 const StyledOption = styled.p`
-  margin: 5px;
+  margin: ${({ theme }) => theme.space[1]};
   cursor: pointer;
 `;
 
 export const StyledSelect = forwardRef<HTMLButtonElement, SelectProps>(
   (
-    { options, value, onChange, placeholder = 'Select an option' }: SelectProps,
+    {
+      options,
+      value,
+      onChange,
+      placeholder = 'common.selectOption',
+    }: SelectProps,
     ref
   ) => {
     const { t } = useTranslation();
-    const innerPlaceholder = placeholder || t('common.selectOption');
+    const innerPlaceholder = t(placeholder);
     const selectedOption = options.find((option) => option.value === value);
     const buttonText = selectedOption ? selectedOption.label : innerPlaceholder;
 
