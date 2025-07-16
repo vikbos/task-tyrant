@@ -1,2 +1,2 @@
 npm test
-npm tsc
+npm run tsc
