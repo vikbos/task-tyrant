@@ -86,8 +86,7 @@ export interface Theme {
     slim: number;
     normal: number;
     thick: number;
-  }
-
+  };
 }
 
 export const lightTheme: Theme = {
@@ -105,7 +104,6 @@ export const lightTheme: Theme = {
     textTertiary: '#999999',
     textOnPrimary: '#ffffff',
     textLink: '#0070f3',
-    
 
     // Primary (Action)
     primary: '#0070f3',
@@ -182,7 +180,7 @@ export const lightTheme: Theme = {
     slim: 300,
     normal: 400,
     thick: 700,
-  }
+  },
 };
 
 export const darkTheme: Theme = {
@@ -190,19 +188,19 @@ export const darkTheme: Theme = {
 
   colors: {
     // Backgrounds
-    background: '#121212',                  // Main app background
-    backgroundSecondary: '#1e1e1e',         // Panels, cards, list items
-    backgroundElevated: '#2a2a2a',          // Modals, popovers
+    background: '#121212', // Main app background
+    backgroundSecondary: '#1e1e1e', // Panels, cards, list items
+    backgroundElevated: '#2a2a2a', // Modals, popovers
 
     // Text
-    textPrimary: '#ffffff',                 // Main content text
-    textSecondary: '#cccccc',               // Secondary labels
-    textTertiary: '#999999',                // Hints, disabled text
-    textOnPrimary: '#ffffff',               // Text on primary button
+    textPrimary: '#ffffff', // Main content text
+    textSecondary: '#cccccc', // Secondary labels
+    textTertiary: '#999999', // Hints, disabled text
+    textOnPrimary: '#ffffff', // Text on primary button
     textLink: '#0070f3',
 
     // Primary (Action)
-    primary: '#3399ff',                     // Lighter blue for contrast
+    primary: '#3399ff', // Lighter blue for contrast
     primaryHover: '#1a8cff',
     primaryActive: '#0066cc',
 
@@ -279,5 +277,5 @@ export const darkTheme: Theme = {
     slim: 300,
     normal: 400,
     thick: 700,
-  }
+  },
 };

@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { space, layout, SpaceProps, LayoutProps, Theme } from 'styled-system';
+import { space, layout, SpaceProps, LayoutProps } from 'styled-system';
 
 type BackgroundKey =
   | 'background'
