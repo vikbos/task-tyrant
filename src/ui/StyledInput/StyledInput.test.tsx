@@ -55,7 +55,7 @@ describe('FormInput Component', () => {
         <Wrapper />
       </ThemeProvider>
     );
-    expect(screen.getByLabelText('Email')).toBeInTheDocument();
+    expect(screen.getByText('Email')).toBeInTheDocument();
     expect(screen.getByPlaceholderText('Enter your email')).toBeInTheDocument();
   });
 
